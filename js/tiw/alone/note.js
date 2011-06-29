@@ -5,6 +5,8 @@ tiw.alone.note = {
     init: function() {
         this.editor = ace.edit("editor");
         var JavascriptMode = require("ace/mode/javascript").Mode;
+        var RubyMode = require("ace/mode/ruby").Mode;
+        var PhpMode = require("ace/mode/php").Mode;
 
         // Check for the various File API support.
         if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -27,6 +29,21 @@ tiw.alone.note = {
         var editor = this.editor;
         dojo.forEach(files, function(item){
             console.log(item.name)
+            var fileName = item.name.split('.');
+            var extension = fileName[1];
+            switch(extension) {
+                case 'php':
+                    var PhpMode = require('ace/mode/php').Mode;
+                    editor.getSession().setMode(new PhpMode());
+                    break;
+                case 'js':
+                    var JavascriptMode = require('ace/mode/javascript').Mode;
+                    editor.getSession().setMode(new JavascriptMode());
+                    break;
+                default:
+                    // code
+            }
+            console.log(fileName);
             var reader = new FileReader();
             reader.onload = (function(theFile) {
                 return function(e) {

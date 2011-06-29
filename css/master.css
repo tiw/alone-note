@@ -1,21 +1,21 @@
 
 #editor {
     position: absolute;
-    width: 500px;
-    height: 400px;
+    width: 700px;
+    height: 600px;
 }
 #preview{
     position: absolute;
     width: 500px;
     height: 400px;
-    margin-left: 520px;
+    margin-left: 720px;
     background-color: yellow;
 }
 #show{
     position: absolute;
-    margin-top: 500px;
+    margin-top: 630px;
 }
 #files {
     position: absolute;
-    margin-top: 450px;
+    margin-top: 650px;
 }
