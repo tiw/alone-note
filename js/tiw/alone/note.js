@@ -1,7 +1,14 @@
 
 dojo.provide('tiw.alone.note');
 
+/**
+ * class for simple notepad
+ */
 tiw.alone.note = {
+
+    /**
+     * initialize notepad 
+     */
     init: function() {
         this.editor = ace.edit("editor");
         var JavascriptMode = require("ace/mode/javascript").Mode;
@@ -17,12 +24,18 @@ tiw.alone.note = {
             console.log('aho, your brower can not read file');
         }
     },
+    /**
+     * callback for preview markdown text
+     */
     previewCb: function(){
         var text = this.editor.getSession().getValue();
         var converter = new Attacklab.showdown.converter();
         var html = converter.makeHtml(text);
         dojo.attr(dojo.byId('preview'), 'innerHTML', html);
     },
+    /**
+     * insert file to the editor after reading from file 
+     */
     loadFileCb: function(evt){
         var files = evt.target.files;
         var output=[];
@@ -53,5 +66,4 @@ tiw.alone.note = {
             reader.readAsBinaryString(item);
         });
     },
-
 };
