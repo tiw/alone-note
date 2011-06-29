@@ -1,0 +1,21 @@
+
+#editor {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+}
+#preview{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    margin-left: 520px;
+    background-color: yellow;
+}
+#show{
+    position: absolute;
+    margin-top: 500px;
+}
+#files {
+    position: absolute;
+    margin-top: 450px;
+}
